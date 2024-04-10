@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .lista-filmes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .lista-filmes li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .lista-filmes li img {
+    width: 100px;
+    margin-right: 20px;
+  }
+  
+  .lista-filmes li h2 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .lista-filmes li p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+  }
+  

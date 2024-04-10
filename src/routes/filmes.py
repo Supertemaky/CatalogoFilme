@@ -17,13 +17,13 @@ filme_route = Blueprint('filmes', __name__)
 
 """
 
-@filme_route.route("/")
+@filme_route.route('/')
 def listar_filmes():
     return render_template("listar_filmes.html")
 
-@filme_route.route("/", methods="POST")
-def insrir_filme():
-    return 'filme inserido'
+# @filme_route.route("/", methods="POST")
+# def inserir_filme():
+#     return 'filme inserido'
 
 @filme_route.route("/new")
 def form_create_filme():
@@ -37,10 +37,10 @@ def dados_filme():
 def form_editar_filme():
     return render_template("form_editar_filme.html")
 
-@filme_route.route("/<int:filme_id>/update", methods="PUT")
-def update_filme():
-    return 'filme atualizado'
+# @filme_route.route("/<int:filme_id>/update", methods="PUT")
+# def update_filme():
+#     return 'filme atualizado'
 
-@filme_route.route("/<int:filme_id>/delete", method="DELETE")
-def delete_filme():
-    return 'filme deletado'
+# @filme_route.route("/<int:filme_id>/delete", methods="DELETE")
+# def delete_filme():
+#     return 'filme deletado'
