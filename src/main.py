@@ -4,8 +4,6 @@ from config import *
 
 app = Flask(__name__)
 
-app.register_blueprint(filme_route, url_prefix="/filmes")
-
 @app.route('/')
 def main():
     return 'teste'
