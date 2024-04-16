@@ -1,7 +1,7 @@
 from routes.filmes import filme_route
 
 from database.database import db
-from database.Models import Filme 
+from database.Models.filmes import Filmes
 
 
 def configure_all(app):
