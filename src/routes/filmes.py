@@ -28,11 +28,11 @@ def inserir_filme():
     data = request.json
 
     novo_filme = Filmes.create(
-        filme_nome = data['nomeFilme'],
-        filme_data = data['dataLancamento'],
-        filme_genero = data['generoFilme'],
-        filme_duracao = data['duracaoFilme'],
-        filme_sinopse = data['sinopseFilme'],
+        filme_nome = data['filme_nome'],
+        filme_data = data['filme_data'],
+        filme_genero = data['filme_genero'],
+        filme_duracao = data['filme_duracao'],
+        filme_sinopse = data['filme_sinopse'],
     )
 
     return render_template('listar_filmes.html', cliente = novo_filme)
