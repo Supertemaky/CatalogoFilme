@@ -35,7 +35,7 @@ def inserir_filme():
         filme_sinopse = data['filme_sinopse'],
     )
 
-    return render_template('listar_filmes.html', methods=['POST'])
+    return {"adionado": "filme"}
 
 @filme_route.route("/new")
 def form_create_filme():
