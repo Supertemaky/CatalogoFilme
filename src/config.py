@@ -10,7 +10,7 @@ def configure_all(app):
 
 def configure_db():
     db.connect()
-    db.create_tables([Filme])
+    db.create_tables([Filmes])
 
 def configure_routes(app):
-    app.register_blueprint(filme_route)
+    app.register_blueprint(filme_route,url_prefix='/filmes')

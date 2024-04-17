@@ -1,4 +1,4 @@
-from peewee import Model
+from peewee import Model, CharField
 from database.database import db
 
 class Filmes(Model):
