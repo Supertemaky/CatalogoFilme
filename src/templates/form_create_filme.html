@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Filme</title>
-    <link rel="stylesheet" href="../static/css/form_criar_filme.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form_criar_filme.css') }}">
 </head>
 <body>
     <h1>Adicionar Filme</h1>
 
-    <form id="formFilme">
+    <form   id="formFilme" 
+            class="c-form"
+            action="{{ url_for('filmes.inserir_filme') }}">
+
+
         <div class="campo">
             <label for="nomeFilme">Nome do Filme:</label>
             <input type="text" id="nomeFilme" name="nomeFilme" required>
@@ -49,7 +53,5 @@
 
         <button type="submit">Adicionar Filme</button>
     </form>
-
-    <script src="script.js"></script>
 </body>
 </html>
