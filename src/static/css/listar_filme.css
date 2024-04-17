@@ -41,7 +41,7 @@ body {
     transition: 2s;
     border-radius: 20px 1px 0px 20px;
   }
-  @media (max-width: 480px) {
+  @media (max-width: 729px) {
     .lista-filmes {
       display: inline-block;
     }
