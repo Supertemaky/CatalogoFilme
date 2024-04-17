@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, url_for
 from database.Models.filmes import Filmes
 
 filme_route = Blueprint('filmes', __name__)
@@ -28,14 +28,14 @@ def inserir_filme():
     data = request.json
 
     novo_filme = Filmes.create(
-        filme_nome = data['filme_nome'],
-        filme_data = data['filme_data'],
-        filme_genero = data['filme_genero'],
-        filme_duracao = data['filme_duracao'],
-        filme_sinopse = data['filme_sinopse'],
+        filme_nome = data['nome'],
+        filme_data = data['data'],
+        filme_genero = data['genero'],
+        filme_duracao = data['duracao'],
+        filme_sinopse = data['sinopse'],
     )
 
-    return render_template('listar_filmes.html', methods=['POST'])
+    return url_for('listar_filmes')
 
 @filme_route.route("/new")
 def form_create_filme():
