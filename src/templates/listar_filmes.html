@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Filmes</title>
+  <link rel="stylesheet" href="../static/css/listar_filme.css">
+  
+</head>
+<body>
+  
+  <ul class="lista-filmes">
+    <li>
+      <img class="Poster" src="../templates/Image/exemplo1.jpg" alt="Filme's"> 
+      <button class="mostrar-conteudo">Mostrar Conteúdo</button>
+    </li>
+    <li class="conteudo">
+      <h2>{Titulo}</h2>
+      <p>{Descrição}</p>
+      <div class="simbolos">
+        {conjunto de simbolos}
+      </div>
+      <hr>
+      <p>{Dados Sobre filme}</p>
+    </li>
+    </ul>
+
+    <ul class="lista-filmes-Criar">
+      <li>
+        <img class="Poster" src="../templates/Image/Play.png" alt="Criar"> 
+      </li>
+      <li>
+        <button type="button"><a href="../templates/form_create_filme.html">Catalogar Filme</a></button>
+      </li>
+      </ul>
+    
+    
+   
+      <script src="../static/js/script.js"></script>
+</body>
+</html>

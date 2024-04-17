@@ -1,0 +1,47 @@
+body {
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  .lista-filmes {
+    position: relative;
+    display: flex;
+    list-style-type:none;
+    box-shadow: 1px 1px 15px white;
+    margin: 5% 12% 0% 12%;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background-color: #292929;
+    color:white;
+    padding: 0px;
+  }
+  .lista-filmes-Criar {
+    list-style-type:none;
+    box-shadow: 1px 1px 15px white;
+    margin: 5% 12% 0% 12%;
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    background-color: #292929;
+    color:white;
+    padding: 0px;
+  }
+  .Poster{
+    border-radius: 20px;
+  }
+ 
+  .conteudo{
+    width: 100%;
+   }
+  .lista-filmes img {
+    width:90%;
+    transition: 2s;
+  }
+  .lista-filmes img:hover {
+    width:100%;
+    transition: 2s;
+    border-radius: 20px 1px 0px 20px;
+  }
+  
+
+ 
