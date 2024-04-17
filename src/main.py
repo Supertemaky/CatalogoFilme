@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    return 'teste'
+    return render_template('listar_filmes.html')
 
 configure_all(app)
 

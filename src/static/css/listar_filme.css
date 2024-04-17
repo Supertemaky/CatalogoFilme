@@ -28,20 +28,22 @@ body {
   }
   .Poster{
     border-radius: 20px;
+    width:90%;
+    transition: 2s;
   }
  
   .conteudo{
     width: 100%;
    }
-  .lista-filmes img {
-    width:90%;
-    transition: 2s;
-  }
-  .lista-filmes img:hover {
+  
+  .Poster:hover {
     width:100%;
     transition: 2s;
     border-radius: 20px 1px 0px 20px;
   }
-  
-
+  @media (max-width: 480px) {
+    .lista-filmes {
+      display: inline-block;
+    }
+  }
  
