@@ -8,14 +8,20 @@
 </head>
 <body>
   <h1>Lista de Filmes</h1>
+  {% for filme in filmes %}
+    {{ filme.filme_id }}
+    {{ filme.filme_nome }}
+    {{ filme.filme_data }}
+    {{ filme.filme_genero }}
+    {{ filme.filme_duracao }}
+    {{ filme.filme_sinopse }}
+  {% endfor %}
   <ul class="lista-filmes">
     <li>
-      <img src="imagem-filme1.jpg" alt="Filme 1">
       <h2>Título do Filme 1</h2>
       <p>Descrição do Filme 1...</p>
     </li>
     <li>
-      <img src="imagem-filme2.jpg" alt="Filme 2">
       <h2>Título do Filme 2</h2>
       <p>Descrição do Filme 2...</p>
     </li>

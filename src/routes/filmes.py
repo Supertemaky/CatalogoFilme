@@ -20,14 +20,15 @@ filme_route = Blueprint('filmes', __name__)
 
 @filme_route.route('/')
 def listar_filmes():
-    return render_template("listar_filmes.html")
+    filmes = Filmes.select()
+    return render_template("listar_filmes.html", filmes = filmes)
 
 @filme_route.route('/', methods=['POST'])
 def inserir_filme():
 
     data = request.json
 
-    novo_filme = Filmes.create(
+    Filmes.create(
         filme_nome = data['nome'],
         filme_data = data['data'],
         filme_genero = data['genero'],
@@ -35,7 +36,7 @@ def inserir_filme():
         filme_sinopse = data['sinopse'],
     )
 
-    return url_for('listar_filmes')
+    return render_template('listar_filmes.html')
 
 @filme_route.route("/new")
 def form_create_filme():
