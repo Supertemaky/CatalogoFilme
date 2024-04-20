@@ -18,17 +18,17 @@
 
       <div class="mb-3">
         <label class="form-label">Nome do filme</label>
-        <input type="text" class="form-control" name="nome">
+        <input type="text" class="form-control" name="nome" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Data de lançamento</label>
-        <input type="date" class="form-control" name="data">
+        <input type="date" class="form-control" name="data" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Genero do filme</label>
-        <select name="genero">
+        <select name="genero" required>
           <option value="">Selecione o Gênero</option>
           <option value="acao">Ação</option>
           <option value="animacao">Animação</option>
@@ -47,12 +47,12 @@
 
       <div id="" class="mb-3">
         <label class="form-label">Duração(minutos):</label>
-        <input type="number" class="form-control" name="duracao">
+        <input type="number" class="form-control" name="duracao" required>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Sinopse:</label>
-        <input type="text" class="form-control" name="sinopse">
+        <input type="text" class="form-control" name="sinopse" required>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
