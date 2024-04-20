@@ -7,24 +7,19 @@
   <link rel="stylesheet" href="../static/css/listar_filme.css">
 </head>
 <body>
+
   <h1>Lista de Filmes</h1>
-  {% for filme in filmes %}
-    {{ filme.filme_id }}
-    {{ filme.filme_nome }}
-    {{ filme.filme_data }}
-    {{ filme.filme_genero }}
-    {{ filme.filme_duracao }}
-    {{ filme.filme_sinopse }}
-  {% endfor %}
+
   <ul class="lista-filmes">
-    <li>
-      <h2>Título do Filme 1</h2>
-      <p>Descrição do Filme 1...</p>
-    </li>
-    <li>
-      <h2>Título do Filme 2</h2>
-      <p>Descrição do Filme 2...</p>
-    </li>
-    </ul>
+  {% for filme in filmes %}
+
+  <li>
+    <h2>{{ filme.filme_nome }}</h2>
+    <p>{{ filme.filme_sinopse }}</p>
+  </li>  
+
+  {% endfor %}
+  </ul>
+  <button>Criar</button>
 </body>
 </html>

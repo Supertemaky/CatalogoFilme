@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, url_for
+from flask import Blueprint, render_template, request, redirect
 from database.Models.filmes import Filmes
 
 filme_route = Blueprint('filmes', __name__)
@@ -19,24 +19,27 @@ filme_route = Blueprint('filmes', __name__)
 """
 
 @filme_route.route('/')
+def index():
+    return render_template('index.html')
+
+
+@filme_route.route('/listar')
 def listar_filmes():
+
     filmes = Filmes.select()
     return render_template("listar_filmes.html", filmes = filmes)
-
-@filme_route.route('/', methods=['POST'])
-def inserir_filme():
-
+    
+@filme_route.route('/inserir', methods=['POST'])
+def inserir_filmes():
     data = request.json
-
     Filmes.create(
         filme_nome = data['nome'],
         filme_data = data['data'],
         filme_genero = data['genero'],
         filme_duracao = data['duracao'],
         filme_sinopse = data['sinopse'],
-    )
-
-    return render_template('listar_filmes.html')
+        )
+    return redirect(listar_filmes)
 
 @filme_route.route("/new")
 def form_create_filme():

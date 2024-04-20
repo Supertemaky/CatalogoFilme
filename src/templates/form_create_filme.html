@@ -1,68 +1,39 @@
-<!doctype html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adicionar Filme</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-</head>
-<div class="container">
-
-  <body>
-
-    <h1>Adicionar Filme</h1>
-    <form class="c-form" action="{{ url_for('filmes.inserir_filme') }}" method="POST">
-
-      <div class="mb-3">
-        <label class="form-label">Nome do filme</label>
-        <input type="text" class="form-control" name="nome" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Data de lançamento</label>
-        <input type="date" class="form-control" name="data" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Genero do filme</label>
-        <select name="genero" required>
-          <option value="">Selecione o Gênero</option>
-          <option value="acao">Ação</option>
-          <option value="animacao">Animação</option>
-          <option value="aventura">Aventura</option>
-          <option value="comedia">Comédia</option>
-          <option value="documentario">Documentário</option>
-          <option value="drama">Drama</option>
-          <option value="ficcao-cientifica">Ficção Científica</option>
-          <option value="horror">Horror</option>
-          <option value="musical">Musical</option>
-          <option value="romance">Romance</option>
-          <option value="suspense">Suspense</option>
-          <option value="guerra">Guerra</option>
-          </select>
-      </div>
-
-      <div id="" class="mb-3">
-        <label class="form-label">Duração(minutos):</label>
-        <input type="number" class="form-control" name="duracao" required>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Sinopse:</label>
-        <input type="text" class="form-control" name="sinopse" required>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-
-    </form>
+  <h1>Adicionar Filme</h1>
+  <form class="c-form" action="{{ url_for('filmes.listar_filmes') }}" method="POST">
+    <div class="mb-3">
+      <label class="form-label">Nome do filme</label>
+      <input type="text" class="form-control" name="nome" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Data de lançamento</label>
+      <input type="date" class="form-control" name="data" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Genero do filme</label>
+      <select name="genero" required>
+        <option value="">Selecione o Gênero</option>
+        <option value="acao">Ação</option>
+        <option value="animacao">Animação</option>
+        <option value="aventura">Aventura</option>
+        <option value="comedia">Comédia</option>
+        <option value="documentario">Documentário</option>
+        <option value="drama">Drama</option>
+        <option value="ficcao-cientifica">Ficção Científica</option>
+        <option value="horror">Horror</option>
+        <option value="musical">Musical</option>
+        <option value="romance">Romance</option>
+        <option value="suspense">Suspense</option>
+        <option value="guerra">Guerra</option>
+        </select>
+    </div>
+    <div id="" class="mb-3">
+      <label class="form-label">Duração(minutos):</label>
+      <input type="number" class="form-control" name="duracao" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Sinopse:</label>
+      <input type="text" class="form-control" name="sinopse" required>
+    </div>
+    <button  type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="{{ url_for('static', filename='js/cru.js') }}"></script>
-</body>
-
-</html>
