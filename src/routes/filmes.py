@@ -39,7 +39,7 @@ def inserir_filme():
 
 @filme_route.route("/new")
 def form_create_filme():
-    return render_template("form_create_filme.html")
+    return render_template("form_create_filme.html", methods=["POST"])
 
 @filme_route.route("/<int:filme_id>")
 def dados_filme():

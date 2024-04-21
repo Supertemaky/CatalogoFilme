@@ -4,6 +4,7 @@ body {
     color: white;
     text-align: center;
   }
+
   .lista-filmes {
     position: relative;
     display: flex;
@@ -16,6 +17,7 @@ body {
     color:white;
     padding: 0px;
   }
+
   .lista-filmes-Criar {
     list-style-type:none;
     box-shadow: 1px 1px 15px white;
@@ -26,21 +28,22 @@ body {
     color:white;
     padding: 0px;
   }
+
   .Poster{
-    border-radius: 20px;
-    width:90%;
-    transition: 2s;
-  }
- 
-  .conteudo{
-    width: 100%;
-   }
-  
-  .Poster:hover {
+    border-radius: 20px 1px 1px 20px;
     width:100%;
-    transition: 2s;
-    border-radius: 20px 1px 0px 20px;
+    transition: 1s;
   }
+
+    .conteudo {
+      width: 100%;
+    transition: 5s;  
+  }
+
+  .mostrar-conteudo{
+    border-radius: 1px 20px 20px 1px;
+  }
+  
   @media (max-width: 729px) {
     .lista-filmes {
       display: inline-block;

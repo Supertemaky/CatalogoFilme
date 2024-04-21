@@ -6,19 +6,35 @@
     <title>Criar</title>
 </head>
 <body>
-    <div class="tabela1">
-        <div class="tabela2">nomeFilme</div>
-    <div class="tabela1">
-        <div class="tabela2">dataLancamento</div>
-    </div>
-    <div class="tabela1">
-        <div class="tabela2">generoFilme</div>
-    </div>
-    <div class="tabela1">
-        <div class="tabela2">duracaoFilme</div>
-    </div>
-    <div class="tabela1">
-        <div class="tabela2">sinopseFilme</div>
+    <div class="bloco">
+        <form action="/src/filmes.db" method="post">
+        <div class="dados">
+            <div class="formulario conteudos">
+                <label type="text" aria-placeholder="Nome do Filme"></label>
+                <input type="text" name="" id="{FILME}">
+            </div>
+        </div>
+        <div class="dados">
+            <div class="formulario conteudos">
+                <label type="text" aria-placeholder="Data de lançamento"></label>
+            </div>
+        </div>
+        <div class="dados">
+            <div class="formulario conteudos">
+                <label type="text" aria-placeholder="Gênero do Filme"></label>
+            </div>
+        </div>
+        <div class="dados">
+            <div class="formulario conteudos">
+                <label type="text" aria-placeholder="Tempo de duração"></label>
+            </div>
+        </div>
+        <div class="dados">
+            <div class="formulario conteudos">
+                <label type="text" aria-placeholder="Sinopse do Filme"></label>
+            </div>
+        </div>
+        </form>
     </div>
 </body>
 </html>
