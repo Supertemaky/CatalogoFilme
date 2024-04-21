@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Filmes</title>
-  <link rel="stylesheet" href="../static/css/listar_filme.css">
-</head>
-<body>
-
   <h1>Lista de Filmes</h1>
 
-  <ul class="lista-filmes">
+  <ul class="lista-filmes" id="lista-filmes">
   {% for filme in filmes %}
 
   <li>
@@ -20,6 +10,6 @@
 
   {% endfor %}
   </ul>
-  <button>Criar</button>
-</body>
-</html>
+  <button class="btn btn-primary" 
+          c-get="{{ url_for('filmes.form_create_filme') }}"
+          c-target="#index-filmes">Criar</button>
