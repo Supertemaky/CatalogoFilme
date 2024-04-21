@@ -5,8 +5,15 @@
 
   <li>
     <h2>{{ filme.filme_nome }}</h2>
+
     <p>{{ filme.filme_sinopse }}</p>
-  </li>  
+
+    <button class="btn btn-success"
+            c-get="{{ url_for('filmes.form_editar_filme', filme_id = filme.id) }}"
+            c-target="#index-filmes" >Editar</button>
+
+    <button>Deletar</button>
+  </li>
 
   {% endfor %}
   </ul>

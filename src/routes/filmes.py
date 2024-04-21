@@ -18,18 +18,23 @@ filme_route = Blueprint('filmes', __name__)
 
 """
 
+#rota principal de filmes
 @filme_route.route('/')
 def index():
 
     return render_template('index_filmes.html')
 
 
+#rota para listar os filmes
 @filme_route.route('/listar')
 def listar_filmes():
 
     filmes = Filmes.select()
+
     return render_template('listar_filmes.html', filmes = filmes)
-    
+
+
+#rota para inserir um novo filme no banco de dados    
 @filme_route.route('/inserir', methods=['POST'])
 def inserir_filmes():
     data = request.json
@@ -42,22 +47,46 @@ def inserir_filmes():
         )
     return redirect(url_for('filmes.listar_filmes'))
 
+
+#rota para apresentar o formulário de criação de um novo filme 
 @filme_route.route("/new")
 def form_create_filme():
-    return render_template('form_create_filme.html')
+    return render_template('form_filme.html')
 
+
+#rota para apresentar os dados do filme escolhido
 @filme_route.route("/<int:filme_id>")
 def dados_filme():
     return render_template("dados_filme.html")
 
+
+#rota para apresentar o formulário de edição do filme escolhido
 @filme_route.route("/<int:filme_id>/edit")
-def form_editar_filme():
-    return render_template("form_editar_filme.html")
+def form_editar_filme(filme_id):
 
+    filme = Filmes.get_by_id(filme_id)
+
+    return render_template("form_filme.html", filme=filme)
+
+
+#rota para enviar e atualizar os dados no banco de dados
 @filme_route.route("/<int:filme_id>/update", methods=['PUT'])
-def update_filme():
-    return 'filme atualizado'
+def update_filme(filme_id):
 
+    data = request.json
+
+    atualiza_filme = Filmes.get_by_id(filme_id)
+    atualiza_filme.filme_nome = data['nome']
+    atualiza_filme.filme_data = data['data']
+    atualiza_filme.filme_genero = data['genero']
+    atualiza_filme.filme_duracao = data['duracao']
+    atualiza_filme.filme_sinopse = data['sinopse']
+    atualiza_filme.save()
+
+    return redirect(url_for('filmes.listar_filmes'))
+
+
+#rota para deletar o filme escolhido
 @filme_route.route("/<int:filme_id>/delete", methods=['DELETE'])
 def delete_filme():
     return 'filme deletado'

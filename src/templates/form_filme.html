@@ -1,19 +1,30 @@
   <h1>Adicionar Filme</h1>
-  <form class="c-form" 
-        action="{{ url_for('filmes.inserir_filmes') }}"
+  <form class="c-form"
         c-target="#index-filmes"
-        method="post">
+        
+        {% if filme %}
+
+        action="{{ url_for('filmes.update_filme', filme_id=filme.id) }}"
+        method="PUT"
+
+        {% else %}
+
+        action="{{ url_for('filmes.inserir_filmes') }}"
+        method="POST"
+
+        {% endif %}
+        >
 
 
     <div class="mb-3">
       <label class="form-label">Nome do filme</label>
-      <input type="text" class="form-control" name="nome" required>
+      <input type="text" class="form-control" name="nome" {% if filme %} value="{{filme.filme_nome}}" {% endif %} required>
     </div>
 
 
     <div class="mb-3">
       <label class="form-label">Data de lançamento</label>
-      <input type="date" class="form-control" name="data" required>
+      <input type="date" class="form-control" name="data" {% if filme %} value="{{filme.filme_data}}" {% endif %} required>
     </div>
 
 
@@ -39,16 +50,16 @@
 
     <div class="mb-3">
       <label class="form-label">Duração(minutos):</label>
-      <input type="number" class="form-control" name="duracao" required>
+      <input type="number" class="form-control" name="duracao" {% if filme %} value="{{filme.filme_duracao}}" {% endif %} required>
     </div>
 
 
     <div class="mb-3">
       <label class="form-label">Sinopse:</label>
-      <input type="text" class="form-control" name="sinopse" required>
+      <input type="text" class="form-control" name="sinopse" {% if filme %} value="{{filme.filme_sinopse}}" {% endif %} required>
     </div>
 
-    <button  type="submit" class="btn btn-primary" >Cadastrar</button>
+    <button  type="submit" class="btn btn-primary"> {% if filme %} Salvar {% else %} Cadastrar {% endif %}</button>
 
   </form>
 </div>
