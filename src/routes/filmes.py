@@ -88,5 +88,7 @@ def update_filme(filme_id):
 
 #rota para deletar o filme escolhido
 @filme_route.route("/<int:filme_id>/delete", methods=['DELETE'])
-def delete_filme():
-    return 'filme deletado'
+def delete_filme(filme_id):
+    filme = Filmes.get_by_id(filme_id)
+    filme.delete_instance()
+    return {"delete": 'ok'}

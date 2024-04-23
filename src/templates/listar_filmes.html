@@ -12,7 +12,9 @@
             c-get="{{ url_for('filmes.form_editar_filme', filme_id = filme.id) }}"
             c-target="#index-filmes" >Editar</button>
 
-    <button>Deletar</button>
+    <button class="btn btn-danger"
+            c-delete="{{ url_for('filmes.delete_filme', filme_id = filme.id) }}"
+            c-remove-closest="li">Deletar</button>
   </li>
 
   {% endfor %}
