@@ -1,24 +1,22 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Filmes</title>
-  <link rel="stylesheet" href="../static/css/listar_filme.css">
-</head>
-<body>
   <h1>Lista de Filmes</h1>
-  <ul class="lista-filmes">
-    <li>
-      <img src="imagem-filme1.jpg" alt="Filme 1">
-      <h2>Título do Filme 1</h2>
-      <p>Descrição do Filme 1...</p>
-    </li>
-    <li>
-      <img src="imagem-filme2.jpg" alt="Filme 2">
-      <h2>Título do Filme 2</h2>
-      <p>Descrição do Filme 2...</p>
-    </li>
-    </ul>
-</body>
-</html>
+
+  <ul class="lista-filmes" id="lista-filmes">
+  {% for filme in filmes %}
+
+  <li>
+    <h2>{{ filme.filme_nome }}</h2>
+
+    <p>{{ filme.filme_sinopse }}</p>
+
+    <button class="btn btn-success"
+            c-get="{{ url_for('filmes.form_editar_filme', filme_id = filme.id) }}"
+            c-target="#index-filmes" >Editar</button>
+
+    <button>Deletar</button>
+  </li>
+
+  {% endfor %}
+  </ul>
+  <button class="btn btn-primary" 
+          c-get="{{ url_for('filmes.form_create_filme') }}"
+          c-target="#index-filmes">Criar</button>
