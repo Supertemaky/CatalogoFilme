@@ -1,5 +1,4 @@
-from flask import Flask, render_template, url_for
-from routes.filmes import filme_route
+from flask import Flask
 from config import *
 
 app = Flask(__name__)

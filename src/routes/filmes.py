@@ -26,7 +26,7 @@ def index():
 
 
 #rota para listar os filmes
-@filme_route.route('/listar')
+@filme_route.route('/listar', methods=['GET','POST','PUT','DELETE'])
 def listar_filmes():
 
     filmes = Filmes.select()
