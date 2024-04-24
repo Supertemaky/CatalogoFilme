@@ -8,25 +8,27 @@
   
 </head>
 <body>
+<h1>Lista de Filmes</h1>
 
-  <ul class="lista-filmes">
-    <li>
-      <img class="Poster" src="../static/Image/exemplo1.jpg" alt="Filme's"> 
-      <button class="mostrar-conteudo">Mostrar Conteúdo</button>
-    </li>
-    <li class="conteudo">
-      <h2>{Titulo}</h2>
-      <p>{Descrição}</p>
-      <div class="simbolos">
-        {conjunto de simbolos}
-      </div>
-      <hr>
-      <p>{Dados Sobre filme}</p>
-    </li>
-    </ul>
+    <ul class="lista-filmes">
+      <li>
+        <img class="Poster" src="../static/Image/exemplo1.jpg" alt="Filme's"> 
+        <button class="mostrar-conteudo">Mostrar Conteúdo</button>
+      </li>
+      <li class="conteudo">
+        <h2>{Titulo}</h2>
+        <p>{Descrição}</p>
+        <div class="simbolos">
+          {conjunto de simbolos}
+        </div>
+        <hr>
+        <p>{Dados Sobre filme}</p>
+      </li>
+      </ul>
+ 
+  
     
-
-    <ul class="lista-filmes-Criar">
+      <ul class="lista-filmes-Criar">
       <li>
         <img class="Poster" src="../static/Image/Play.png" alt="Criar"> 
       </li>
@@ -34,6 +36,7 @@
         <button type="button"><a href="{{'/filmes/new'}}">Catalogar Filme</a></button>
       </li>
       </ul>
+    
       <script src="../static/js/script.js"></script>
 </body>
 </html>

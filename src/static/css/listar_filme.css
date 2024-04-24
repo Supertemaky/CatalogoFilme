@@ -10,7 +10,7 @@ body {
     display: flex;
     list-style-type:none;
     box-shadow: 1px 1px 15px white;
-    margin: 5% 12% 0% 12%;
+    margin: 1% 50% 12% 0%;
     border: 2px solid #ddd;
     border-radius: 20px;
     background-color: #292929;
@@ -21,7 +21,7 @@ body {
   .lista-filmes-Criar {
     list-style-type:none;
     box-shadow: 1px 1px 15px white;
-    margin: 5% 12% 0% 12%;
+    margin: 1% 50% 12% 0%;
     border: 2px solid #ddd;
     border-radius: 20px;
     background-color: #292929;
@@ -30,14 +30,17 @@ body {
   }
 
   .Poster{
-    border-radius: 20px 1px 1px 20px;
+ 
+    border-radius: 20px 20px 1px 1px;
     width:100%;
-    transition: 1s;
+    
   }
 
-    .conteudo {
-      width: 100%;
-    transition: 5s;  
+  .conteudo {
+    width: 100%;
+    overflow: hidden;
+    overflow: auto;
+    word-wrap: break-word; 
   }
 
   .mostrar-conteudo{
@@ -47,6 +50,10 @@ body {
   @media (max-width: 729px) {
     .lista-filmes {
       display: inline-block;
+    }
+    .Poster{
+      border-radius: 20px 20px 1px 1px;
+      width:100%;
     }
   }
  
