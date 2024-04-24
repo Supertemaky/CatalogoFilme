@@ -9,13 +9,12 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-<h1>Lista de Filmes</h1>
 
-  
+<div c-container="{{ url_for('filmes.listar_filmes') }}"></div>
 
-  
-
-    <ul class="lista-filmes">
+    <!-- 
+      MODELO BASE
+      <ul class="lista-filmes">
       <li>
         <img class="Poster" src="../static/Image/exemplo1.jpg" alt="Filme's"> 
         <button class="mostrar-conteudo">Mostrar Conteúdo</button>
@@ -30,13 +29,16 @@
         <p>{Dados Sobre filme}</p>
       </li>
       </ul>
+      -->
     
       <ul class="lista-filmes-Criar">
         <div id="index-filmes" class="container">
           <li>
             <img class="Poster" src="../static/Image/Play.png" alt="Criar"> 
           </li>
-          <div c-container="{{ url_for('filmes.listar_filmes') }}"></div>
+          <button class="btn btn-primary" 
+    c-get="{{ url_for('filmes.form_create_filme') }}"
+    c-target="#index-filmes">Criar</button>
       
         </div>
       </ul>

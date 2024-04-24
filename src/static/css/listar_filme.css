@@ -35,7 +35,6 @@ body {
     width:100%;
     
   }
-
   .conteudo {
     width: 100%;
     overflow: hidden;
@@ -47,7 +46,7 @@ body {
     border-radius: 1px 20px 20px 1px;
   }
   
-  @media (max-width: 729px) {
+  @media (max-width: 1228px) {
     .lista-filmes {
       display: inline-block;
     }
