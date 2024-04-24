@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
 from database.Models.filmes import Filmes
 
 filme_route = Blueprint('filmes', __name__)
@@ -18,41 +18,75 @@ filme_route = Blueprint('filmes', __name__)
 
 """
 
+#rota principal de filmes
 @filme_route.route('/')
+def index():
+
+    return render_template('index_filmes.html')
+
+
+#rota para listar os filmes
+@filme_route.route('/listar', methods=['GET','POST','PUT','DELETE'])
 def listar_filmes():
-    return render_template("listar_filmes.html")
+    filmes = Filmes.select()
 
-@filme_route.route('/', methods=["POST"])
-def inserir_filme():
+    return render_template('listar_filmes.html', filmes = filmes)
 
+
+#rota para inserir um novo filme no banco de dados    
+@filme_route.route('/inserir', methods=['POST'])
+def inserir_filmes():
     data = request.json
+    Filmes.create(
+        filme_nome = data['nome'],
+        filme_data = data['data'],
+        filme_genero = data['genero'],
+        filme_duracao = data['duracao'],
+        filme_sinopse = data['sinopse'],
+        )
+    return redirect(url_for('filmes.listar_filmes'))
 
-    novo_filme = Filmes.create(
-        filme_nome = data['nomeFilme'],
-        filme_data = data['dataLancamento'],
-        filme_genero = data['generoFilme'],
-        filme_duracao = data['duracaoFilme'],
-        filme_sinopse = data['sinopseFilme'],
-    )
-
-    return render_template('listar_filmes.html', cliente = novo_filme)
-
+#rota para apresentar o formulário de criação de um novo filme 
 @filme_route.route("/new")
 def form_create_filme():
-    return render_template("form_create_filme.html", methods=["POST"])
+    return render_template('form_filme.html')
 
+
+#rota para apresentar os dados do filme escolhido
 @filme_route.route("/<int:filme_id>")
 def dados_filme():
     return render_template("dados_filme.html")
 
+
+#rota para apresentar o formulário de edição do filme escolhido
 @filme_route.route("/<int:filme_id>/edit")
-def form_editar_filme():
-    return render_template("form_editar_filme.html")
+def form_editar_filme(filme_id):
 
-@filme_route.route("/<int:filme_id>/update", methods=["PUT"])
-def update_filme():
-    return 'filme atualizado'
+    filme = Filmes.get_by_id(filme_id)
 
-@filme_route.route("/<int:filme_id>/delete", methods=["DELETE"])
-def delete_filme():
-    return 'filme deletado'
+    return render_template("form_filme.html", filme=filme)
+
+
+#rota para enviar e atualizar os dados no banco de dados
+@filme_route.route("/<int:filme_id>/update", methods=['PUT'])
+def update_filme(filme_id):
+
+    data = request.json
+
+    atualiza_filme = Filmes.get_by_id(filme_id)
+    atualiza_filme.filme_nome = data['nome']
+    atualiza_filme.filme_data = data['data']
+    atualiza_filme.filme_genero = data['genero']
+    atualiza_filme.filme_duracao = data['duracao']
+    atualiza_filme.filme_sinopse = data['sinopse']
+    atualiza_filme.save()
+
+    return redirect(url_for('filmes.listar_filmes'))
+
+
+#rota para deletar o filme escolhido
+@filme_route.route("/<int:filme_id>/delete", methods=['DELETE'])
+def delete_filme(filme_id):
+    filme = Filmes.get_by_id(filme_id)
+    filme.delete_instance()
+    return {"delete": 'ok'}
