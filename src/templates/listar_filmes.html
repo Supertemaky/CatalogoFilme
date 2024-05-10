@@ -4,7 +4,6 @@
     {% for filme in filmes %}
     <li>
       <img class="Poster" src="../static/Image/exemplo1.jpg" alt="Filme's"> 
-      <button class="mostrar-conteudo">Mostrar Conteúdo</button>
     </li>
      
     <li class="conteudo">
@@ -23,6 +22,7 @@
             c-delete="{{ url_for('filmes.delete_filme', filme_id = filme.id) }}"
             c-remove-closest="li">Deletar</button>
     </li>
+    
     {% endfor %}
     
     </ul>
