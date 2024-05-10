@@ -43,6 +43,7 @@ def inserir_filmes():
         filme_genero = data['genero'],
         filme_duracao = data['duracao'],
         filme_sinopse = data['sinopse'],
+        #filme_poster = data['poster'],
         )
     return redirect(url_for('filmes.listar_filmes'))
 
@@ -79,6 +80,7 @@ def update_filme(filme_id):
     atualiza_filme.filme_genero = data['genero']
     atualiza_filme.filme_duracao = data['duracao']
     atualiza_filme.filme_sinopse = data['sinopse']
+    #atualiza_filme.filme_poster = data['poster']
     atualiza_filme.save()
 
     return redirect(url_for('filmes.listar_filmes'))

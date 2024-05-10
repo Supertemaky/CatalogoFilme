@@ -1,14 +1,16 @@
-  <h1>Lista de Filmes</h1>
+  <h1 style="text-align: center;">Lista de Filmes</h1>
   
-  <ul class="lista-filmes" id="lista-filmes">
+  <ul class="lista-filmes" >
     {% for filme in filmes %}
+    <div>
     <li>
+      <!--<div class="Poster">{{filme.filme_poster}}</div>-->
       <img class="Poster" src="../static/Image/exemplo1.jpg" alt="Filme's"> 
     </li>
      
     <li class="conteudo">
       <h2>{{ filme.filme_nome }}</h2>
-      <!--<p>{Descrição}</p>-->
+      
       <div class="simbolos">
         {{filme.filme_genero}}
       </div>
@@ -22,7 +24,7 @@
             c-delete="{{ url_for('filmes.delete_filme', filme_id = filme.id) }}"
             c-remove-closest="li">Deletar</button>
     </li>
-    
+  </div>
     {% endfor %}
     
     </ul>

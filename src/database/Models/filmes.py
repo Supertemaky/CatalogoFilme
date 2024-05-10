@@ -1,4 +1,4 @@
-from peewee import Model, CharField
+from peewee import Model, CharField 
 from database.database import db
 
 class Filmes(Model):
@@ -8,6 +8,7 @@ class Filmes(Model):
     filme_genero = CharField()
     filme_duracao = CharField()
     filme_sinopse = CharField()
+    #filme_poster = CharField()
 
     class Meta:
         database = db
