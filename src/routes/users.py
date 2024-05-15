@@ -16,9 +16,37 @@ user_route = Blueprint('user', __name__)
 
 """
 
-user_route.route('/<int: user_id>')
-def info_user():
+user_route.route('/')
+def list_users():
+ 
+    pass
 
-    
-    
+user_route.route('/', methods=['POST'])
+def insert_users():
+ 
+    pass
+
+user_route.route('/new')
+def form_new_users():
+ 
+    pass
+
+user_route.route('/<int:user_id>')
+def show_user():
+ 
+    pass
+
+user_route.route('/<int: user_id>/edit')
+def form_edit_users():
+ 
+    pass
+
+user_route.route('/<int: user_id>/update', methods=['PUT'])
+def update_user():
+ 
+    pass
+
+user_route.route('/<int: user_id>/delete', methods=['DELETE'])
+def delete_user():
+ 
     pass
