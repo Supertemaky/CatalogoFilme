@@ -1,4 +1,5 @@
 from routes.filmes import filme_route
+from routes.users import user_route
 
 from database.database import db
 from database.Models.filmes import Filmes
@@ -14,3 +15,4 @@ def configure_db():
 
 def configure_routes(app):
     app.register_blueprint(filme_route,url_prefix='/filmes')
+    app.register_blueprint(user_route,url_prefix='/user')

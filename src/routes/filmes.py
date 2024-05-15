@@ -11,9 +11,9 @@ filme_route = Blueprint('filmes', __name__)
 /filmes/ (POST) -- inserir filmes no servidor
 /filmes/new/ (GET) -- exibe um formulario para a adição de um novo filme
 /filmes/<int:id> (GET) -- exibe dados de um filme em específico
-/filmes/<int:id>/edit/ (GET) -- exibe um formulário com os dados do cliente selecionado para editar
-/filmes/<int:id>/update/ (PUT) -- envia uma atualização do cliente para o servidor
-/filmes/<int:id>/delete/ (DELETE) -- deleta o usuário escolhido do servidor
+/filmes/<int:id>/edit/ (GET) -- exibe um formulário com os dados do filme selecionado para editar
+/filmes/<int:id>/update/ (PUT) -- envia uma atualização do filme para o servidor
+/filmes/<int:id>/delete/ (DELETE) -- deleta o filme escolhido do servidor
 
 
 """
