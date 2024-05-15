@@ -1,11 +1,30 @@
 body {
-    font-family: sans-serif;
-    background-color: black;
-    color: white;
-    text-align: center;
-  }
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+.btn{
+  text-align: center;
+  transition: 1s;
+  
+}
+.btn:hover{
+  transition: 1s;
+  box-shadow: 0px 2px 10px white;
+  font-size: 20px;
+}
 .h1{
   text-align: center;
+
+  
+}
+.fundo{
+  background-color: black;
+  
 }
   .lista-filmes {
     position: relative;
